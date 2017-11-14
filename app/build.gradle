@@ -5,6 +5,9 @@ apply plugin: 'kotlin-kapt'
 
 ext.daggerVersion = '2.13'
 
+def flickrEndpoint = "\"https://api.flickr.com/services/\""
+def flickrApiKey = "\"82659fa8fc255f337e1b06219a502962\""
+
 android {
     compileSdkVersion 27
 
@@ -15,6 +18,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "FLICKR_ENDPOINT", flickrEndpoint
+        buildConfigField "String", "FLICKR_API_KEY", flickrApiKey
     }
 
     buildTypes {
