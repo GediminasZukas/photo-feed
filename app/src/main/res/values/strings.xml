@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">Photo Feed</string>
+    <string name="appName">Photo Feed</string>
+
+    <string name="errorNetwork">No internet connection</string>
+    <string name="errorUnknown">Unknown error occurred. Try again later</string>
 </resources>
