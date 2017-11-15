@@ -7,6 +7,7 @@ import com.gapps.photofeed.R
 import com.gapps.photofeed.components.ErrorMsgFactory
 import com.gapps.photofeed.screens.feed.presentation.FeedScreenPresenter
 import com.gapps.photofeed.screens.feed.presentation.models.PhotosModel
+import dagger.android.AndroidInjection
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -16,6 +17,7 @@ class FeedActivity : AppCompatActivity(), FeedScreen {
     private var photosPageNumber = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feed)
         feedPresenter.setView(this)
