@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 ext.daggerVersion = '2.13'
+ext.supportLibVersion = '27.0.1'
 
 def flickrEndpoint = "\"https://api.flickr.com/services/\""
 def flickrApiKey = "\"82659fa8fc255f337e1b06219a502962\""
@@ -37,7 +38,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation 'com.android.support:appcompat-v7:27.0.1'
+    implementation "com.android.support:appcompat-v7:$supportLibVersion"
+    implementation "com.android.support:recyclerview-v7:$supportLibVersion"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation "com.google.dagger:dagger:$daggerVersion"
