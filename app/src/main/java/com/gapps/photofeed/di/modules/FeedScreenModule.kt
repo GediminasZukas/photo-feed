@@ -9,6 +9,7 @@ import com.gapps.photofeed.screens.feed.domain.PhotosRepository
 import com.gapps.photofeed.screens.feed.domain.cases.GetRecentPhotosPage
 import com.gapps.photofeed.screens.feed.domain.models.Photos
 import com.gapps.photofeed.screens.feed.presentation.FeedScreenPresenter
+import com.gapps.photofeed.screens.feed.presentation.view.PhotoListAdapter
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -22,6 +23,10 @@ abstract class FeedScreenModule {
         @Provides
         fun providePhotosDataStoreFactory(apiCallExecutor: ApiCallExecutor): PhotosDataStoreFactory
                 = PhotosDataStoreFactory(apiCallExecutor)
+
+        @JvmStatic
+        @Provides
+        fun providePhotoListAdapter(): PhotoListAdapter = PhotoListAdapter()
     }
 
     @Binds
