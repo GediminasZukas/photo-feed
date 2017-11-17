@@ -13,6 +13,7 @@ import com.gapps.photofeed.screens.feed.presentation.models.PhotoModel
 import com.gapps.photofeed.screens.feed.presentation.models.PhotosModel
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_feed.*
+import kotlinx.android.synthetic.main.view_progress_bar.*
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -29,6 +30,7 @@ class FeedActivity : AppCompatActivity(), FeedScreen {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feed)
+        showLoadingLayout()
         feedPresenter.setView(this)
 
         initLazyListLoading()
@@ -46,6 +48,7 @@ class FeedActivity : AppCompatActivity(), FeedScreen {
     private fun updatePhotoList(photosData: List<PhotoModel>) {
         if (listPhotoFeed.adapter == null) {
             listPhotoFeed.adapter = adapter
+            hideLoadingLayout()
         } else {
             adapter.hideLoadingView()
         }
@@ -62,9 +65,16 @@ class FeedActivity : AppCompatActivity(), FeedScreen {
         })
     }
 
+    private fun showLoadingLayout() {
+        layoutProgressBar.visibility = View.VISIBLE
+    }
+
+    private fun hideLoadingLayout() {
+        layoutProgressBar.visibility = View.GONE
     }
 
     override fun onDataError(error: Throwable) {
+        hideLoadingLayout()
         adapter.hideLoadingView()
         Timber.e(error)
         Toast.makeText(baseContext, ErrorMsgFactory.getErrorMsg(error, baseContext), Toast.LENGTH_SHORT).show()
