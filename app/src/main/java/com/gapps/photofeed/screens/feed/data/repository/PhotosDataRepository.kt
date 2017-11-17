@@ -8,7 +8,7 @@ import javax.inject.Inject
 class PhotosDataRepository @Inject constructor(private val photosDataStoreFactory: PhotosDataStoreFactory) : PhotosRepository {
 
     override fun getPhotos(param: Int): Observable<Photos> {
-        val dataStore = photosDataStoreFactory.createCloudDataStore()
+        val dataStore = photosDataStoreFactory.createCloudDataStore(param)
         return dataStore.recentPhotoList()
     }
 }
