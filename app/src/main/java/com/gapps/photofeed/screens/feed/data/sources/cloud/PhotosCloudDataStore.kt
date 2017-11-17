@@ -15,7 +15,7 @@ class PhotosCloudDataStore (private val apiCallExecutor: ApiCallExecutor, privat
         const val PAGE_NUMBER = "page"
         const val API_EXTRA_PARAMS = "extras"
         const val METHOD_RECENT_PHOTOS = "flickr.photos.getRecent"
-        const val RECENT_PHOTOS_PER_PAGE = "100"
+        const val RECENT_PHOTOS_PER_PAGE = "40"
         const val EXTRA_240_IMAGE = "url_m"
         const val EXTRA_320_IMAGE = "url_n"
         const val EXTRA_640_IMAGE = "url_z"
