@@ -6,5 +6,5 @@ import javax.inject.Inject
 
 class PhotosDataStoreFactory @Inject constructor(private val apiCallExecutor: ApiCallExecutor) {
 
-    fun createCloudDataStore(): PhotosDataStore = PhotosCloudDataStore(apiCallExecutor)
+    fun createCloudDataStore(param: Int): PhotosDataStore = PhotosCloudDataStore(apiCallExecutor, param)
 }
