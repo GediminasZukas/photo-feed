@@ -1,4 +1,6 @@
 # photo-feed
+**The app was developed back in 2017 in order to play with some technologies, no further plans for updating it.**
+
 This is a playground app which is architected by following Uncle Bob's "Clean Architecture" approach. Special thanks to Fernando Cejas and his work on this topic: https://github.com/android10/Android-CleanArchitecture Many ideas from his repo and blog is used in this project.
 
 It is a very simple application - it shows recent photo feed  which is retrieved from Flickr API.
